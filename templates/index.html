@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Git Demo App</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 50px auto; text-align: center; }
+        input { padding: 10px; width: 70%; }
+        button { padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #f4f4f4; margin: 5px 0; padding: 10px; border-left: 5px solid #007bff; }
+    </style>
+</head>
+<body>
+    <h1>🚀 DevOps Task Manager</h1>
+    
+    <form action="/add" method="POST">
+        <input type="text" name="task" placeholder="Enter a new task...">
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
