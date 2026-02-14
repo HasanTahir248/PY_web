@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-# A simple list to store tasks in memory
+# A simple list to store tasks in memory......
 tasks = ["Learn Git", "Master Linux", "Build a Pipeline"]
 
 @app.route('/')
