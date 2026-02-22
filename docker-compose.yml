@@ -6,6 +6,20 @@ services:
     image: my-web-app:latest
     ports:
       - "5000:5000"
+    #-------------------------------------------------------------
+    deploy:
+      # How many copies of this container do we want running?
+      replicas: 3
+      
+      # How should Swarm handle updates? (Rolling updates)
+      update_config:
+        parallelism: 1
+        delay: 10s
+        
+      # What happens if the container crashes?
+      restart_policy:
+        condition: on-failure
+      #-------------------------------------------------------------
     volumes:
       - .:/app
     
